@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMLE Screenshot Generator</title>
+    <!-- Include Poppins font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include html2canvas for screenshot functionality -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Input Form -->
+    <div class="input-form" id="inputForm">
+        <h2 class="card-title">EMLE Screenshot Generator</h2>
+        
+        <div class="form-group">
+            <label for="studentId" class="form-label">Student ID (14 digits):</label>
+            <input type="text" id="studentId" class="form-control" placeholder="Enter 14-digit ID" maxlength="14">
+            <div id="idError" class="error-message hidden">Please enter a valid 14-digit ID</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="resultMark" class="form-label">Result Mark:</label>
+            <input type="number" id="resultMark" class="form-control" placeholder="Enter result mark (0-100)" min="0" max="100">
+            <div id="markError" class="error-message hidden">Please enter a valid mark (0-100)</div>
+        </div>
+        
+        <div class="text-center">
+            <button id="generateBtn" class="btn btn-primary">Generate Certificate</button>
+        </div>
+    </div>
+
+    <!-- Certificate Preview -->
+    <div id="certificate" class="hidden">
+        <!-- Profile Card -->
+        <div class="card">
+            <div class="card-title">Profile</div>
+            <div class="card-body">
+                <div class="profile-container">
+                    <div class="profile-image-container">
+                        <img id="profileImage" src="" alt="Profile Image" class="profile-image">
+                    </div>
+                    <div class="profile-info">
+                        <div id="profileName" class="profile-name"></div>
+                        <div class="profile-detail">
+                            <div class="icon-container">
+                                <!-- Replaced SVG with custom icon -->
+                                <img id="emailIcon" src="1.svg" class="icon-svg" alt="Email icon">
+                            </div>
+                            <span id="profileEmail"></span>
+                        </div>
+                        <div class="profile-detail">
+                            <div class="icon-container">
+                                <!-- Replaced SVG with custom icon -->
+                                <img id="educationIcon" src="2.svg" class="icon-svg" alt="Education icon">
+                            </div>
+                            Medicine, November 2024
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Upcoming Exams Section -->
+        <div class="card">
+            <div class="card-title">Upcoming Exams</div>
+            <!-- Empty content as shown in the screenshot -->
+        </div>
+        
+        <!-- Exams Results Section -->
+        <div class="card">
+            <div class="card-title">Exams Results</div>
+            <div class="divider"></div>
+            <div class="card-body">
+                <div class="exam-title">November 2024, 7th (First Real Exam Medicine) (فعلى)</div>
+                <div class="exam-subtitle">November 2024, 7th (First Real Exam Medicine) (فعلى)</div>
+                
+                <div class="exam-result-row">
+                    <div class="exam-result-label">Total Exam Degree:</div>
+                    <div class="exam-result-value">100</div>
+                </div>
+                
+                <div class="exam-result-row">
+                    <div class="exam-result-label">Answered Questions:</div>
+                    <div class="exam-result-value">100</div>
+                </div>
+                
+                <div class="exam-result-row">
+                    <div class="exam-result-label">Result by Mark:</div>
+                    <div class="exam-result-value"><span id="resultByMark"></span> <span id="resultStatus" class="success-text"></span></div>
+                </div>
+                
+                <div class="exam-result-row">
+                    <div class="exam-result-label">Result by Percentage:</div>
+                    <div class="exam-result-value"><span id="resultByPercentage"></span> %</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-3">
+            <button id="backBtn" class="btn btn-primary download-btn">Go Back</button>
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<script src="script.js"></script>
+    
+    
+</body>
+</html>
